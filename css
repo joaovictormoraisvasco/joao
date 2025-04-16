@@ -1,0 +1,23 @@
+body
+{
+    background-color: rgba(83, 0, 104, 0.432);
+    text-align: center;
+}
+input,textarea
+{
+    width: 500px;
+    padding: 15px;
+}
+button,textarea
+{
+    width: 100px;
+    padding: 3px
+}
+form{
+    box-shadow: 3px 3px 70px rgb(86, 4, 134);
+    margin:  10px;
+    padding: 70px;
+    border-radius: 40px;
+    width: 600px;
+    background-color: rgb(37, 0, 54);
+}

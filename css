@@ -1,43 +1,51 @@
-body
-{
-   
-    text-align: center;
-}
 input,textarea
 {
     width: 600px;
     padding: 15px;
 }
-button,textarea
-{
-    width: 100px;
-    padding: 3px
-}
 form{
-    box-shadow: 3px 3px 70px rgb(27, 106, 224);
-    margin:  10px;
+    box-shadow: 3px 3px 70px rgb(0, 27, 67);
+    margin:  15px;
     padding: 70px;
-    border-radius: 40px;
-    width: 600px;
-    background-color: rgb(11, 63, 136);
+    border-radius: 20px;
+    width: 450px;
+    background-color: rgba(9, 0, 75, 0.738);
+    
 }
 h1{
-    font-family: 'oswald';font-size: 100px;text-decoration: underline;transition: all 0.3s ease;text-shadow: 2px 2px 10px rgb(255, 255, 255);color: rgba(0, 131, 207, 0.852);-webkit-text-stroke: 0.5px rgba(253, 237, 237, 0.868);
+    font-family: oswald;font-size: 100px;text-decoration: underline;transition: all 0.3s ease;text-shadow: 2px 2px 10px rgba(53, 5, 5, 0.401);color: rgba(255, 255, 255, 0.958);-webkit-text-stroke: 0.5px rgba(253, 237, 237, 0.523);
 }
 body{
-    background-image: url(mar.jfif);
+    background-image: linear-gradient(45deg, blue,red);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 .input-wrapper{
-    padding: 8px 12px;
+    padding: 17px 2px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    
 }
 .input-wrapper i {
     
     color: rgb(255, 255, 255);
 }
+button{
+     background-color: rgb(32, 10, 153);
+     border: none;
+     width: 30%;
+     padding: 9px;
+     border-radius: 12px;
+     color: rgb(255, 255, 255);
+     font-size: 17px;font-family: anton;
+}
+button:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+
+
 

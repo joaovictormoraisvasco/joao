@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css"/>
+    <title>cadastro</title>
+</head>
+<body>
+    <h1>CADASTRO</h1>
+    <div id="cadastro">
+        <div class="input-junto">
+            <input type="email" placeholder="digite seu email"> <br><br>
+            <input type="password" placeholder="crie uma senha"> <br><br>
+            <input type="password" placeholder="confirme a senha"><br><br>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</body>
+</html>

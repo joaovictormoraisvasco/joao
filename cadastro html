@@ -7,28 +7,25 @@
     <title>cadastro</title>
 </head>
 <body>
+    <center>
     <h1>CADASTRO</h1>
+    <form>
     <div id="cadastro">
         <div class="input-junto">
             <input type="email" placeholder="digite seu email"> <br><br>
             <input type="password" placeholder="crie uma senha"> <br><br>
             <input type="password" placeholder="confirme a senha"><br><br>
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
+        
+        <button type="submit">enviar</button>
+    </center>
+    </form>    
 </body>
-</html>
+
+
+
+
+
+
+
+  

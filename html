@@ -1,43 +1,48 @@
 
 
-     <!DOCTYPE html>
-<html lang="en">
+   <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>cadastro</title>
+
+    <script src="script.js"></script>
+    <title>atividade</title>
+    <style>
+
+   
+    </style>
 </head>
 <body>
     <center>
-    <h1>Cadastrar</h1>
+    <h1>login</h1>
     <form>
+        <div class="input-wrapper">
+            <i class="fas far fa-user"></i>
+            <input type="text" placeholder="digite o nome do usuario">
+        </div>
     
-     <div class="input-user">
-           
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="digite o nome do usuario" ><br><br>
-     </div>
-        
-       <div class="input-email">
-            
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="digite seu email"> <br><br>
-     </div>
-     <div class="input-senha">
-            
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="digite sua senha " ><br><br>
-    </div>
-        <div class="input-senha2">
-             <input type="password"placeholder="confime sua senha">
-     </div>
-        
-        <button type="submit">enviar</button>
+    <br>
+    <br>
+        <div class="input-wrapper">
+            <i class="fas far fa-envelope"></i>
+            <input placeholder="digite seu email"/>
+        </div>
+    <br>
+    <br>
+        <div class="input-wrapper">
+            <i class="fas fas fa-lock"></i>
+            <input type="password" placeholder="digite sua senha"/>
+        </div>
+    
+    <p>ainda nao tem conta? <a href="cadastro.html ">crie uma</a> </p><br><br><br>
+    <button type="submit">enviar</button>
+
+    </form>
     </center>
-    </form>    
 </body>
+</html>

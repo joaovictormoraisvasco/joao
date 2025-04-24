@@ -1,4 +1,5 @@
-  <!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playwrite+RO:wght@100..400&family=Staatliches&display=swap" rel="stylesheet">
     <title>cadastro</title>
 </head>
 <body>
     <center>
-    <h1>Cadastrar</h1>
+    <h1>Cadastro</h1>
     <form>
     
      <div class="input-user">
@@ -34,6 +35,7 @@
         <div class="input-senha2">
              <input type="password"placeholder="confime sua senha">
      </div>
+     <p>ja tem uma conta?<a href="vscode.html">fazer login</a><br></p>
         
         <button type="submit">enviar</button>
     </center>
@@ -43,6 +45,9 @@
 
 
 
+
+
+  
 
 
   

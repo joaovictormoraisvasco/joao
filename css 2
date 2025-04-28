@@ -1,14 +1,16 @@
-.input-user{
-    display: flex;
-    align-items: center;
-    
-    
+.sobrenome input {
+    padding: 15px;
+    width: 88%;
+    margin-left: 37px;
+    background-color: rgb(255, 255, 255);
+    border: none;
 }
+
 .input-user input{
     padding: 15px;
     width: 88%;
-    
 }
+
 button{
     padding: 13px;
     border: none;
@@ -17,11 +19,9 @@ button{
     width: 18%;
 }
 .input-email{
-    display: flex;
+    display:flex;
     align-items: center;
    
-    
-    margin-top: 22px;
 }
 .input-email input{
     padding: 15px;
@@ -31,7 +31,7 @@ button{
 .input-senha{
     display: flex;
     align-items: center;
-    margin-top: 22px;
+    
     
 }
 .input-senha input{
@@ -39,26 +39,29 @@ button{
     width: 88%;
     margin-top: 5px;
 }
+
+
 .input-senha2 input{
     padding: 15px;
-    width: 83%;
+    width: 88%;
     margin-top: 13px;
-    margin-left: 29.6px;
+    margin-left: 28;
 }
 form{
     box-shadow: 3px 3px 70px rgb(0, 27, 67);
     padding: 70px;
     border-radius: 40px;
     width: 450px;
-    background-color: rgba(9, 0, 75, 0.738);
+    background-color: rgba(64, 106, 146, 0.438);
     margin: 15px;
 }
 h1{
-    font-family: Staatliches;font-size: 100px;text-decoration:wavy;transition: all 0.3s ease;text-shadow: 2px 2px 10px rgba(255, 248, 248, 0.401);color: rgba(255, 255, 255, 0.958);-webkit-text-stroke: 0.5px rgba(253, 237, 237, 0.523);
+    font-family: Staatliches;font-size: 100px;text-decoration:wavy;transition: all 0.3s ease;text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.401);color: rgba(255, 255, 255, 0.958);-webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.39);
 }
 body{
-    background-image: linear-gradient(45deg, rgb(2, 2, 189),red);
+    background-image: url(rooftop\ \(1\).jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
 }
 i{
@@ -72,12 +75,12 @@ input{
     
 }
 button:hover{
-    background-color: blue;
+    background-color: rgb(52, 92, 145);
     cursor: pointer;
 }
 p{
 color: rgb(255, 255, 255);
-text-align: right;
+margin-left: 200;
 font-size: 16px;
 
   
@@ -85,9 +88,10 @@ font-size: 16px;
 }
 a{
     text-decoration: none;
-    color: rgb(109, 0, 252);
+    color: rgb(61, 134, 168);
 
 
 }
-
-
+input{
+    border: none;
+}

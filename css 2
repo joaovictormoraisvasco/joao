@@ -67,11 +67,13 @@ body{
 i{
     color: rgb(255, 255, 255);
     font-size: 18px;
+    
 }
 input{
-    border-radius: 30px;
+    border-radius: 23px;
     margin: 15px;
     align-items: center;
+    border: none;
     
 }
 button:hover{
@@ -92,6 +94,19 @@ a{
 
 
 }
-input{
-    border: none;
+
+
+.sol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 50;
+    
+
+
+}
+.sol img{
+    width: 145px;
+    
 }

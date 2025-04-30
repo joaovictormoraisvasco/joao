@@ -1,5 +1,6 @@
 
-    <!DOCTYPE html>
+
+         
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,29 +14,41 @@
 </head>
 <body>
     <center>
-    <h1>Cadastro</h1>
+        <div class="sol">
+            <h1 >cadastro</h1>
+            <img src="46b65a02ff99e7bb4e84d4d3d627a729-icone-de-raios-nitidos-do-sol.png" alt="Sol" class="icon-sol">
+      
+        </div>
     <form>
-    
+       
      <div class="input-user">
            
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="digite o nome do usuario" ><br><br>
-     </div>
+            <input type="text" placeholder="digite o seu nome" >
+     </div>   
+       
+        <div class="sobrenome">
+             <input type="text" placeholder="digite o seu sobrenome">
+
+       </div>
+     <br>
         
        <div class="input-email">
             
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="digite seu email"> <br><br>
+            <input type="email" placeholder="digite seu email"> 
      </div>
+     <br>
      <div class="input-senha">
             
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="digite sua senha " ><br><br>
+            <input type="password" placeholder="digite sua senha " >
     </div>
+    
         <div class="input-senha2">
              <input type="password"placeholder="confime sua senha">
      </div>
-     <p>ja tem uma conta?<a href="vscode.html">fazer login</a><br></p>
+     <p>ja tem uma conta?<a href="oi.html"target="_blank">fazer login</a></p>
         
         <button type="submit">enviar</button>
     </center>

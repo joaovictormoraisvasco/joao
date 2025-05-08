@@ -1,9 +1,52 @@
-const form = document.getElementById("form")
-const lista = document.getElementById("climas")
+const form = document.getElementById("form");
+const lista = document.getElementById("clima");
 
-let clima = JSON.parse(localStorage.getItem("cadastro")) || [];
+let cadastro = JSON.parse(localStorage.getItem("cadastro")) || [];
 
-function renderInformaçoes( {
-lista.innerHTML = "";
-clima.for each((inter))
-})
+function renderInformacoes() {
+  lista.innerHTML = "";
+
+  cadastro.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <strong>${item.nome}</strong><br>
+      Email: ${item.email}<br>
+      Senha: ${item.senha}<br>
+      <button onclick="editar(${index})">Editar</button>
+      <button onclick="remover(${index})">Remover</button>
+    `;
+    lista.appendChild(li);
+  });
+}
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const novaInformacao = {
+    nome: form.nome.value,
+    email: form.email.value,
+    senha: form.senha.value,
+  };
+
+  cadastro.push(novaInformacao);
+  localStorage.setItem("cadastro", JSON.stringify(cadastro));
+  form.reset();
+  renderInformacoes();
+});
+
+function remover(index) {
+  cadastro.splice(index, 1);
+  localStorage.setItem("cadastro", JSON.stringify(cadastro));
+  renderInformacoes();
+}
+
+function editar(index) {
+  const informacao = cadastro[index];
+  form.nome.value = informacao.nome;
+  form.email.value = informacao.email;
+  form.senha.value = informacao.senha;
+  cadastro.splice(index, 1);
+  renderInformacoes();
+}
+
+renderInformacoes();

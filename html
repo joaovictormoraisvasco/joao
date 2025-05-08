@@ -1,57 +1,46 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playwrite+RO:wght@100..400&family=Staatliches&display=swap" rel="stylesheet">
-    
-
-    <script src="script.js"></script>
-    <title>atividade</title>
-    <style>
-
-   
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-
 <body>
+  <center>
+    <div class="sol">
+      <img src="nuvem-removebg-preview.png" alt="logo" class="">
+      <h1>Login</h1>
+    </div>
 
-    <center>
-        <div class="sol">
-            
-            <img src="4208361.png" alt="" class="">
-            <h1 >login</h1>
-      
-        </div>
-    <form>
-
-
-        <div class="input-wrapper">
-            <i class="fas far fa-user"></i>
-            <input type="text" placeholder="digite o nome do usuario">
-        </div>
-    
-    <br>
-    <br>
-        <div class="input-wrapper">
-            <i class="fas far fa-envelope"></i>
-            <input placeholder="digite seu email"/>
-        </div>
-    <br>
-    <br>
-        <div class="input-wrapper">
-            <i class="fas fas fa-lock"></i>
-            <input type="password" placeholder="digite sua senha"/>
-        </div>
-    
-    <p>ainda nao tem conta? <a href="cadastro.html" target="_blank">crie uma</a> </p><br><br><br>
-    <button type="submit">enviar</button>
-
+    <form id="form">
+      <div class="input-wrapper">
+        <i class="fas fa-user"></i>
+        <input type="text" id="nome" placeholder="Digite o nome do usuário" required />
+      </div>
+      <br>
+      <div class="input-wrapper">
+        <i class="fas fa fa-envelope"></i>
+        <input type="email" id="email" placeholder="Digite seu email" required />
+      </div>
+      <br>
+      <div class="input-wrapper">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="senha" placeholder="Digite sua senha" required />
+      </div>
+      <br>
+      <p>Ainda não tem conta? <a href="cadastro.html" target="_blank">Crie uma</a></p><br>
+      <button type="submit">Enviar</button>
     </form>
-    </center>
+
+    
+
+    <h2>Clima</h2>
+    <ul id="clima"></ul>
+  </center>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

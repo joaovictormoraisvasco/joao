@@ -11,6 +11,7 @@
       const li = document.createElement("li");
       li.innerHTML = `
         <strong>${item.nome}</strong><br>
+        sobrenome: ${item.sobrenome}<br>
         Email: ${item.email}<br>
         Senha: ${item.senha}<br>
         <button onclick="editar(${index})">Editar</button>

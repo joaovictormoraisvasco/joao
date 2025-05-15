@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mudanças Climáticas</title>
+  <!-- Fontes e ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ====================== Reset e Estilos Globais ====================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Rubik', sans-serif; /* Fonte principal */
+      background: #e0f7fa;               /* Cor de fundo suave */
+      color: #333;                       /* Cor do texto */
+      line-height: 1.6;                  /* Espaçamento entre linhas */
+      scroll-behavior: smooth;           /* Rolagem suave */
+    }
+
+    /* ====================== Cabeçalho ====================== */
+    header {
+      position: relative;
+      background: linear-gradient(135deg, #4197dd, #4fc3f7); /* Gradiente azul */
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);               /* Sombra leve */
+      overflow: visible;                                    /* Permite dropdown visível */
+    }
+    header h3 { font-size: 1.5rem; } /* Subtítulo do cabeçalho */
+
+    /* Botão de menu lateral */
+    .botao-menu {
+      position: absolute;
+      top: 50%; left: 15px;
+      transform: translateY(-50%);
+      z-index: 1001;
+    }
+    .botao-menu button {
+      font-size: 32px;      /* Tamanho maior para facilitar clique */
+      padding: 6px 10px;    /* Espaço interno */
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    /* Dropdown do menu */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      margin-top: 5px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 1002;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .dropdown-menu a:hover { background: #f0f0f0; }
+
+    /* Botão de login no canto direito */
+    .botao-login {
+      position: absolute;
+      top: 50%; right: 15px;
+      transform: translateY(-50%);
+      z-index: 1001;
+    }
+    .botao-login button {
+      padding: 10px 20px;
+      background: linear-gradient(150deg, #4583b5, #00a6f3);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .botao-login button:hover { transform: scale(1.05); }
+
+    /* ====================== Efeito Chuva ====================== */
+    .chuva {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .gota {
+      position: absolute;
+      top: -10px;
+      width: 2px; height: 10px;
+      background: #fff;
+      opacity: 0.6;
+      animation: cair 2s infinite linear;
+    }
+    @keyframes cair {
+      0% { transform: translateY(0); opacity: 0.6; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* ====================== Conteúdo Principal ====================== */
+    .conteudo {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 40px 20px;
+    }
+    .conteudo h1 {
+      font-size: 2.2rem;
+      color: #0288d1;
+      margin-bottom: 20px;
+      animation: surgimento 2s ease;
+    }
+    .conteudo p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    /* Botão e seção de Causas e Efeitos */
+    .btn-causas {
+      padding: 12px 25px;
+      background: linear-gradient(150deg, #2168a1, #3b9dca);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 20px;
+    }
+    .btn-causas:hover { transform: scale(1.05); }
+    .secao-causas {
+      display: none;
+      background: #fff;
+      border-left: 5px solid #81c784;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    /* Seções informativas */
+    .secao {
+      margin-bottom: 40px;
+    }
+    .secao h2 {
+      color: #0288d1;
+      margin-bottom: 15px;
+    }
+    .secao ul {
+      list-style: none;
+      margin-left: 20px;
+    }
+    .secao ul li {
+      margin-bottom: 10px;
+    }
+
+    /* ====================== Ícones Ecológicos ====================== */
+    .icones-eco {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+    .icones-eco div {
+      text-align: center;
+      transition: 0.3s;
+    }
+    .icones-eco div:hover { transform: scale(1.1); }
+    .icones-eco img { width: 80px; margin-bottom: 10px; }
+
+    /* ====================== Sol Animado ====================== */
+    .sol {
+      position: relative;
+      width: 80px; height: 80px;
+      background: radial-gradient(circle, #ffd55c, #f9a602);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 40px #ffc107;
+      transition: transform 0.3s;
+    }
+    .sol:hover { transform: scale(1.1) rotate(10deg); }
+    .olhos {
+      display: flex;
+      gap: 8px;
+    }
+    .olho {
+      width: 18px; height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .pupila {
+      width: 6px; height: 6px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    /* Rodapé */
+    footer {
+      background: #263238;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @keyframes surgimento {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho com menu, chuva e login -->
+  <header>
+    <div class="botao-menu">
+      <button onclick="toggleMenu()">☰</button>
+      <nav class="dropdown-menu" id="menuLateral">
+        <a href="#">Início</a>
+        <a href="#secao-impactos">Impactos</a>
+        <a href="#secao-acoes">Ações</a>
+        <a href="#secao-curiosidades">Você sabia?</a>
+      </nav>
+    </div>
+    <div class="chuva">
+      <!-- 10 gotas de chuva -->
+      <div class="gota"></div><div class="gota"></div><div class="gota"></div>
+      <div class="gota"></div><div class="gota"></div><div class="gota"></div>
+      <div class="gota"></div><div class="gota"></div><div class="gota"></div>
+      <div class="gota"></div>
+    </div>
+    <h3>Mudanças Climáticas</h3>
+    <div class="botao-login">
+      <button onclick="window.open('vscode.html','_blank')">Login</button> <!-- Abre nova aba -->
+    </div>
+  </header>
+
+  <!-- Conteúdo principal com seções e explicações -->
+  <main class="conteudo">
+    <!-- Introdução com sol animado e texto explicativo -->
+    <section class="intro">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="sol">
+          <div class="olhos">
+            <div class="olho"><div class="pupila" id="pupila1"></div></div>
+            <div class="olho"><div class="pupila" id="pupila2"></div></div>
+          </div>
+        </div>
+        <h1>O que está acontecendo?</h1>
+      </div>
+      <!-- Parágrafos explicativos -->
+      <p>O clima do nosso planeta está mudando rapidamente. Tempestades extremas, secas prolongadas, derretimento de geleiras e aumento do nível dos mares são apenas alguns dos sintomas de uma crise global.</p>
+      <p>Essas mudanças afetam a agricultura, a biodiversidade, a saúde humana e a economia. E elas são causadas, em grande parte, pelas atividades humanas.</p>
+      <!-- Botão que revela seção de causas e efeitos -->
+      <button class="btn-causas" onclick="mostrarSecaoCausas()">Entenda Causas e Efeitos</button>
+      <div class="secao-causas" id="secaoCausas">
+        <h2>Causas</h2>
+        <p>- Emissão de gases de efeito estufa (CO₂, CH₄)</p>
+        <p>- Desmatamento e uso excessivo de recursos naturais</p>
+        <p>- Queima de combustíveis fósseis</p>
+        <h2>Efeitos</h2>
+        <p>- Aquecimento global e aumento do nível do mar</p>
+        <p>- Extinção de espécies e colapso de ecossistemas</p>
+        <p>- Crises hídricas, alimentares e migratórias</p>
+      </div>
+    </section>
+
+    <!-- Seção de Impactos -->
+    <section class="secao" id="secao-impactos">
+      <h2>Impactos no Brasil</h2>
+      <ul>
+        <li><b>Temperaturas mais altas</b> e ondas de calor.</li>
+        <li><b>Chuvas irregulares</b>, causando secas e inundações.</li>
+        <li><b>Prejuízos para a natureza</b>, risco para plantas e animais.</li>
+        <li><b>Dificuldades na agricultura</b> e escassez hídrica.</li>
+        <li><b>Mais eventos extremos</b> como tempestades intensas.</li>
+      </ul>
+    </section>
+
+    <!-- Seção de Ações -->
+    <section class="secao" id="secao-acoes">
+      <h2>Ações Sustentáveis</h2>
+      <ul>
+        <li><b>Energia limpa:</b> solar e eólica.</li>
+        <li><b>Preservar e recuperar florestas.</b></li>
+        <li><b>Uso consciente da água.</b></li>
+        <li><b>Cidades verdes e resilientes.</b></li>
+        <li><b>Restaurar ecossistemas.</b></li>
+      </ul>
+    </section>
+
+    <!-- Seção de Curiosidades -->
+    <section class="secao" id="secao-curiosidades">
+      <h2>Você sabia?</h2>
+      <p>O setor de alimentos é responsável por 1/3 das emissões globais. Apenas 100 empresas geraram 70% das emissões industriais desde 1988. Um aquecimento acima de 1,5°C pode tornar eventos extremos 5x mais frequentes.</p>
+    </section>
+
+    <!-- Ícones representativos -->
+    <div class="icones-eco">
+      <div><img src="https://img.icons8.com/color/96/000000/earth-planet.png" alt="Planeta"/><p>Preservar o planeta</p></div>
+      <div><img src="https://img.icons8.com/color/96/000000/wind-turbine.png" alt="Energia limpa"/><p>Usar energia limpa</p></div>
+      <div><img src="https://img.icons8.com/color/96/000000/forest.png" alt="Reflorestar"/><p>Reflorestar áreas</p></div>
+    </div>
+  </main>
+
+  <!-- Rodapé simples -->
+  <footer>
+    <p>🌱 Desenvolvido por João Pedro C., Kaue Rosa, Gabriel V., João V. 🌎</p>
+  </footer>
+
+  <script>
+    /* Função para movimentar as pupilas seguindo cursor */
+    document.addEventListener('mousemove', e => {
+      [1,2].forEach(i => {
+        const pupila = document.getElementById('pupila'+i);
+        const rect = pupila.getBoundingClientRect();
+        const dx = e.clientX - (rect.left + rect.width/2);
+        const dy = e.clientY - (rect.top + rect.height/2);
+        const ang = Math.atan2(dy, dx);
+        const dist = 4;
+        pupila.style.transform = `translate(${Math.cos(ang)*dist}px, ${Math.sin(ang)*dist}px)`;
+      });
+    });
+
+    /* Toggle da seção de causas e efeitos */
+    function mostrarSecaoCausas() {
+      const sec = document.getElementById('secaoCausas');
+      sec.style.display = sec.style.display === 'block' ? 'none' : 'block';
+    }
+
+    /* Toggle do menu lateral */
+    function toggleMenu() {
+      const menu = document.getElementById('menuLateral');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    /* Fecha menu ao clicar fora */
+    window.onclick = e => {
+      if (!e.target.closest('.botao-menu')) {
+        const menu = document.getElementById('menuLateral');
+        if (menu && menu.style.display === 'block') menu.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>

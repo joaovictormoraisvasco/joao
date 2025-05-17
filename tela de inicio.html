@@ -6,7 +6,9 @@
   <title>Mudanças Climáticas</title>
   <!-- Fontes e ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant&family=Staatliches&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     /* ====================== Reset e Estilos Globais ====================== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,6 +18,7 @@
       color: #333;                       /* Cor do texto */
       line-height: 1.6;                  /* Espaçamento entre linhas */
       scroll-behavior: smooth;           /* Rolagem suave */
+      
     }
 
     /* ====================== Cabeçalho ====================== */
@@ -30,7 +33,7 @@
                                   /* Permite dropdown visível */
     }
     header h1 {
-    font-family: Staatliches;
+    font-family: Roboto;
     font-size: 35px;
     text-decoration:wavy;
      transition: all 0.3s ease;color: rgba(255, 255, 255, 0.958);
@@ -55,7 +58,7 @@
   
     }
     .botao-menu button {
-      font-size: 32px;      /* Tamanho maior para facilitar clique */
+      font-size: 35px;      /* Tamanho maior para facilitar clique */
       padding: 6px 10px;    /* Espaço interno */
       background: none;
       border: none;
@@ -97,7 +100,7 @@
       z-index: 1001;
     }
     .botao-login button {
-      padding: 10px 20px;
+      padding: 15px 20px;
       background: linear-gradient(150deg, #4583b5, #00a6f3);
       color: #fff;
       border: none;
@@ -106,7 +109,32 @@
       transition: 0.3s;
     }
     .botao-login button:hover { transform: scale(1.05); }
-
+    /* Botão de pesquisar no canto direito */
+    .botao-pesquisa{
+        align-items: center;
+        position: absolute;
+        top: 50%; right: 8%;
+       transform: translateY(-50%);
+        display: flex;
+        gap: 8px; 
+    }
+    .botao-pesquisa input{
+    width: 350px;
+    font-size: 16px;     
+    border-radius: 25px;
+    border-style: none;
+    padding-left: 20px;
+    align-items: center;       
+    line-height: 36px;      
+    font-family: roboto;  
+    }
+    .botao-pesquisa i{
+      font-size: 27px;
+    }
+    .botao-pesquisa ::placeholder{
+      font-size: 16px;
+      color: #0040ff5c;
+    }
     /* ====================== Efeito Chuva ====================== */
  .chuva {
   position: absolute;
@@ -247,7 +275,46 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+    /* ====================== imagem no header ====================== */
+     .imagem{
+   position: relative;
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    margin: 0px 0px;
+    }
+    .imagem p{
+      max-width: 1500px;
+        font-family: 'Rubik', sans-serif;
+         color: #333;  
+         font-size: 12px;
+         margin-left: -60px;
+    }
+    .imagem img{
+       width: 1700px;
+        height: 600px; 
+    }
+    .imagem::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* leve escuridão */
+  z-index: 1;
+    }
+    .texto-sobre-imagem {
+  position: absolute;
+  top: 200px; 
+  left: 13%;
+  transform: translateX(-50%);
+  font-family: 'Roboto';
+  font-size: 70px;
+  padding: 20px -20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(108, 102, 102, 0.7);
+  z-index: 2;
+}
   </style>
 </head>
 <body>
@@ -263,6 +330,11 @@
       </nav>
     </div>
     <h1>Mudanças Climáticas</h1>
+    <div class="botao-pesquisa">
+      <input type="text" placeholder="pesquisar">
+       <i class="fas fa-search"></i>
+
+    </div>
     <div class="botao-login">
       <button onclick="window.open('vscode.html','_blank')">Login</button> <!-- Abre nova aba -->
     </div>
@@ -274,18 +346,25 @@
       <div class="gota"></div>
     </div>
   </header>
-
+  <div class="imagem">
+  <div class="texto-sobre-imagem">  <span>Mudanças</span><br>
+  <span>Climáticas</span></div>
+     <img src="ForbesESG_Geleira-na-Argentina_Andres-Forza_Reuters.webp" alt="">
+     <p>Desprendimento de gelo em geleira devido ao aquecimento global. O derretimento acelerado das calotas polares contribui para o aumento do nível dos oceanos e ameaça ecossistemas em todo o planeta</p>
+ </div>
   <!-- Conteúdo principal com seções e explicações -->
   <main class="conteudo">
     <!-- Introdução com sol animado e texto explicativo -->
     <section class="intro">
       <div style="display:flex; align-items:center; gap:10px;">
+        
         <div class="sol">
           <div class="olhos">
             <div class="olho"><div class="pupila" id="pupila1"></div></div>
             <div class="olho"><div class="pupila" id="pupila2"></div></div>
           </div>
         </div>
+        
         <h1>O que está acontecendo?</h1>
       </div>
       <!-- Parágrafos explicativos -->
@@ -382,12 +461,14 @@
       }
     };
   </script>
+  
+   
   <script> //script da chuva caindo
     for (let i = 0; i < 50; i++) {
   let gota = document.createElement("div");
   gota.classList.add("gota");
   gota.style.left = Math.random() * document.querySelector("header").offsetWidth + "px";
-gota.style.animationDuration = (Math.random() * 2 + 3) + "s";
+gota.style.animationDuration = (Math.random() * 3 + 3) + "s";
   document.querySelector(".chuva").appendChild(gota);
 }
   </script>

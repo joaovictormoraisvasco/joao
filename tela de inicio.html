@@ -100,20 +100,30 @@
       z-index: 1001;
     }
     .botao-login button {
-      padding: 15px 20px;
-      background: linear-gradient(150deg, #4583b5, #00a6f3);
-      color: #fff;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: 0.3s;
+       background: linear-gradient(to bottom, #3daee9, #28a5e0);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
+    .botao-login button i {
+  font-size: 18px;
+}
+.botao-login button span {
+  font-size: 16px;
+}
     .botao-login button:hover { transform: scale(1.05); }
     /* Botão de pesquisar no canto direito */
     .botao-pesquisa{
         align-items: center;
         position: absolute;
-        top: 50%; right: 8%;
+        top: 50%; right: 10%;
        transform: translateY(-50%);
         display: flex;
         gap: 8px; 
@@ -336,7 +346,10 @@
 
     </div>
     <div class="botao-login">
-      <button onclick="window.open('vscode.html','_blank')">Login</button> <!-- Abre nova aba -->
+  <button onclick="window.open('vscode.html', '_blank')">
+    <i class="fas fa-user"></i>
+    <span>Login</span>
+      
     </div>
      <div class="chuva">
       <!-- 10 gotas de chuva -->
